@@ -1,14 +1,14 @@
 # importa bibliotecas
 import pyjokes
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
-tradutor = Translator()
+tradutor = GoogleTranslator(source="auto", target="pt")
 
 while True:
     piada = pyjokes.get_joke() # gera piada
-    piada_traduzida = tradutor.translate(piada, dest='pt') # traduz piada
+    piada_traduzida = tradutor.translate(piada) # traduz piada
 
-    print(piada_traduzida.text) # exibe piada traduzida
+    print(piada_traduzida) # exibe piada traduzida
 
     repetir = input('Gerar outra piada? "s" para sim; qualquer outro valor para encerrar: ').lower()
 
